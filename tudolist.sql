@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 24 2024 г., 18:05
+-- Время создания: Май 16 2024 г., 12:14
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `tudolist`
+-- База данных: `todolist`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tasks` (
   `id` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `createdat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `userid` int NOT NULL
@@ -40,8 +40,8 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `name`, `description`, `createdat`, `userid`) VALUES
-(13, 'Первая запись', 'Первая запись в этом приложении))))', '2024-04-24 14:26:19', 13),
-(14, 'Еще одна запись', 'Вторая запись в приложении!', '2024-04-24 14:31:48', 13);
+(16, 'Посуда', 'Помыть посуду', '2024-05-10 13:24:49', 15),
+(18, 'Open api', 'Разобраться и изучить что такое open api', '2024-05-10 13:26:09', 15);
 
 -- --------------------------------------------------------
 
@@ -51,9 +51,9 @@ INSERT INTO `tasks` (`id`, `name`, `description`, `createdat`, `userid`) VALUES
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `authtoken` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `authtoken` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `authtoken`) VALUES
-(13, 'reffo1994@gmail.com', 'eba9eb56eebdae21ce21f74e46e47319', 'eqXm0ODk6mbOxW8wSoVjXp1Ai');
+(15, 'reffo1994@gmail.com', 'f7cade80b7cc92b991cf4d2806d6bd78', '8TPSEhevxHVQU5eUxwuKJTpSk');
 
 --
 -- Индексы сохранённых таблиц
@@ -90,13 +90,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
