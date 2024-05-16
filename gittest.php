@@ -9,6 +9,7 @@
 
 <body>
     <h1>gitHub test file</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur et, velit odit illum iusto asperiores minima quas totam nam incidunt.</p>
 </body>
 
 </html>
